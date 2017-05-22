@@ -41,10 +41,15 @@ void Object::Calculate()
     Matrix3 m2;
     Matrix3 m3;
     m1 = ModelMatrix.SetTranslateFloats (40,40);
-    m2.setRotateZ(0);
+    m2.setRotateZ(1);
     m3 = m3.SetScaleWithFloats (1,1);
 
     ModelMatrix = m1 * m2 * m3;
+
+	if (m_parent)
+	{
+		ModelMatrix = m_parent->ModelMatrix * ModelMatrix;
+	}
     //translate * rotation * scale
 }
 
@@ -56,4 +61,9 @@ void Object::SetEverything(aie::Renderer2D*Renderer, aie::Texture*Texture)
     Scale = Vector2(1, 1); //passing in vectors wont work!!
     rotate = 0; //theres a problem with rotate
     Position = Vector2(40, 40); //passing in vectors wont work!!
+}
+
+void Object::SetParent (Object & parent)
+{
+	*m_parent = parent;
 }

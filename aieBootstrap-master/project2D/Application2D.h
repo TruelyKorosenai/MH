@@ -9,7 +9,10 @@ class Application2D : public aie::Application {
 public:
 
     Object Tank;
-	Application2D();
+	Object Middle;
+	Object Barrel;
+
+	Application2D ();
 	virtual ~Application2D();
 
 	virtual bool startup();
@@ -22,10 +25,6 @@ protected:
 
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Texture*		m_texture;
-	//aie::Texture*		m_shipTexture;
-	//aie::Font*			m_font;
-	//aie::Audio*			m_audio;
-
-	//float m_cameraX, m_cameraY;
-	//float m_timer;
+	aie::Texture*       m_textureMiddle;
+	aie::Texture*       m_textureBarrel;
 };

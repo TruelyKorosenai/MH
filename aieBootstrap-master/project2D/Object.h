@@ -16,11 +16,12 @@ public:
     void Draw();
     void Calculate();
     void SetEverything(aie::Renderer2D*Renderer, aie::Texture*Texture);
-
+	void SetParent (Object& Parent);
     Matrix3 ModelMatrix;
     Vector2 Scale;
     Vector2 Position;
     float rotate;
+	Object *m_parent;
 
 private:
     aie::Renderer2D* m_Renderer;
