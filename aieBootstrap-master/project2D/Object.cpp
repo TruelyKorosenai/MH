@@ -42,7 +42,7 @@ void Object::Calculate()
     Matrix3 m3;
     m1 = ModelMatrix.SetTranslateFloats (40,40);
     m2.setRotateZ(0);
-    m3 = m3.SetScale (1,1);
+    m3 = m3.SetScaleWithFloats (1,1);
 
     ModelMatrix = m1 * m2 * m3;
     //translate * rotation * scale

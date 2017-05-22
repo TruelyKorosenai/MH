@@ -13,10 +13,13 @@
         void setRotateX(float rotation);
         void setRotateY(float rotation);
         void setRotateZ(float rotation);
+
 		Matrix3 &SetTranslateFloats (float x , float y);
 		Matrix3 &SetTranslateVectors (Vector2 & other);
-		Matrix3 &SetScale (float x, float y);
-        //void setto0(Matrix3 &refme);
+		Matrix3 SetScaleWithFloats (float x, float y);
+
+   
+
         Matrix3 &operator=(Matrix3 &other);
         Matrix3 operator*(Matrix3 &other);
         Vector3 operator*(Vector3 &other);
