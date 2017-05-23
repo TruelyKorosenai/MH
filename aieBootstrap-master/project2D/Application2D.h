@@ -5,14 +5,13 @@
 #include "Audio.h"
 #include "Object.h"
 
+// Forward declaration
+class Tank;
+
 class Application2D : public aie::Application {
 public:
 
-    Object Tank;
-	Object Middle;
-	Object Barrel;
-
-	Application2D ();
+	Application2D();
 	virtual ~Application2D();
 
 	virtual bool startup();
@@ -23,8 +22,13 @@ public:
 
 protected:
 
-	aie::Renderer2D*	m_2dRenderer;
-	aie::Texture*		m_texture;
-	aie::Texture*       m_textureMiddle;
-	aie::Texture*       m_textureBarrel;
+    // The world, i.e. our "scene", is an array of all objects in the scene, i.e. a "scene graph".
+    std::vector<Object *> m_scene;
+
+    // creating a tank
+    Tank *m_tankOne;
+    Tank *m_tankTwo;
+    
+    //renderer
+    aie::Renderer2D*	m_2dRenderer;
 };
